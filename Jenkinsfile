@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo "Pushing the image to docker hub"
                 withCredentials([usernamePassword(credentialsId:"jenkins_test",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                sh "docker tag my-note-app ${env.dockerHubUser}/test:${BUILD_NUMBER}"
+                sh "docker tag test ${env.dockerHubUser}/test:${BUILD_NUMBER}"
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
                 sh "docker push ${env.dockerHubUser}/test:${BUILD_NUMBER}"
                 }
