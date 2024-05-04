@@ -11,7 +11,7 @@ pipeline {
         stage("Build"){
             steps {
                 echo "Building the image"
-                sh "docker build -t test:${BUILD_NUMBER} ."
+                sh "sudo docker build -t test:${BUILD_NUMBER} ."
             }
         }
         stage("Push to Docker Hub"){
