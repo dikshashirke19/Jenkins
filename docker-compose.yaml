@@ -1,6 +1,6 @@
 version : "3.3"
 services :
   web :
-     image : diksha1901/test:latest
+     image : diksha1901/test:${BUILD_NUMBER}
      ports :
          - "8000:8000"
