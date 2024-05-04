@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo "Deploying the container"
              //   sh "docker-compose -f docker-compose.yaml down && docker-compose -f docker-compose.yaml up -d"
-                sh "docker run -d --name test test:${BUILD_NUMBER}"
+                sh "docker run -d --name test -p 8080:80 test:${BUILD_NUMBER}"
                 
             }
         }
